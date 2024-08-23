@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthContext } from './context/AuthContext'
 import { useContext } from 'react'
+import ChatFetcher from './components/ChatFetcher'
 
 const App = () => {
   const { currentUser } = useContext(AuthContext)
@@ -31,6 +32,7 @@ const App = () => {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path='chatfetcher' element={<ChatFetcher />} />
         </Route>
       </Routes>
     </BrowserRouter>

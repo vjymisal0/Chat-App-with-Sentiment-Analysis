@@ -1,0 +1,107 @@
+.chatsFetched {
+    background-color: #091629; // Match background with main styling
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 0;
+    // height: 100%; // Adjust based on parent container
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #d8dfe9;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #d8dfe9;
+            color: #d8dfe9;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            strong {
+                color: #59a6ff;
+            }
+
+            span {
+                font-weight: 500;
+                margin-left: 10px;
+            }
+
+            &.Positive {
+                background-color: rgba(37, 253, 253, 0.1);
+            }
+
+            &.Negative {
+                background-color: rgba(255, 99, 132, 0.1);
+            }
+
+            &.Neutral {
+                background-color: rgba(255, 206, 86, 0.1);
+            }
+        }
+    }
+
+    p {
+        color: #d8dfe9;
+        font-size: 16px;
+    }
+
+    // .chartsContainer {
+    //     margin-top: 20px;
+    //     height: auto; // Adjust the height based on your preference
+    //     width: 400px;
+    //     overflow-y: auto; // Enable vertical scrolling if the content exceeds the height
+    //     background-color: #0f1e36; // Optional: background color to match the design
+    //     border-radius: 10px;
+    //     padding: 10px;
+    //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    // }
+    .backIcon {
+        cursor: pointer;
+    }
+
+    .chartContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        width: 50%;
+        max-width: 1200px; // Ensures responsiveness on larger screens
+        background-color: #0f1e36; // Optional background color
+        border-radius: 10px;
+        border: solid 1px #d8dfe9; // Optional border color
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 0 auto; // Center the container horizontally
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: 100%; // Full width on smaller screens
+            padding: 10px; // Adjust padding for smaller screens
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            flex-direction: column;
+            width: 100%; // Full width on tablets
+        }
+
+        h3 {
+            color: #ffffff; // White color for headers
+            text-align: center; // Center align the headers
+        }
+
+
+        canvas {
+            max-width: 100%;
+            height: auto; // Ensure charts are responsive
+        }
+    }
+}
