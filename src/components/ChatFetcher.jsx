@@ -3,18 +3,68 @@ import { onSnapshot, doc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
-import Sentiment from 'sentiment';
 import SentimentChart from './SentimentChart';
 import '../ChatFetcher.scss'; // Import the SCSS file
 import Back from "../img/back.png";
 import { useNavigate } from 'react-router-dom';
+
+// Define custom sentiment words for both English and Marathi
+const positiveWords = [
+    'happy', 'joyful', 'pleasant', 'good', 'great', 'awesome', 'आनंद', 'सुख', 'मस्त', 'अच्छा', 'उत्साह'
+];
+const abusiveWordsEnglish = [
+    'abuse', 'asshole', 'bastard', 'bitch', 'bullshit', 'cunt', 'dick', 'douchebag', 'fuck', 'motherfucker',
+    'piss', 'prick', 'shit', 'slut', 'whore', 'wanker', 'idiot', 'retard', 'stupid', 'jerk'
+];
+
+const abusiveWordsMarathi = [
+    'गंवार', 'चालवले', 'खोटारडं', 'नालायक', 'उत्सुकता', 'बदतमीज', 'विघ्न', 'निंदा', 'फटाक्याचे',
+    'रंगवले', 'कसाबात', 'असाधू', 'कुणी', 'घाणेरडा', 'कुटील', 'चुडेल', 'उत्सव', 'अस्मान', 'चिळी', 'मूर्ख', "बावळट ", "शेमण्या"
+];
+
+const negativeWords = [
+    'sad', 'angry', 'upset', 'bad', 'horrible', 'terrible', 'दुख', 'खोटा', 'विघ्न', 'निराश', 'अस्वस्थ'
+];
+const neutralWords = [
+    'okay', 'fine', 'normal', 'neutral', 'satisfactory', 'साधारण', 'विवेकी', 'तटस्थ'
+];
+
+const analyzeCustomSentiment = (text) => {
+    const words = text.toLowerCase().split(/\s+/);
+    let positiveCount = 0;
+    let negativeCount = 0;
+    let neutralCount = 0;
+    let abusiveCount = 0;
+
+    words.forEach(word => {
+        if (positiveWords.includes(word)) {
+            positiveCount++;
+        } else if (negativeWords.includes(word)) {
+            negativeCount++;
+        } else if (neutralWords.includes(word)) {
+            neutralCount++;
+        } else if (abusiveWordsEnglish.includes(word) || abusiveWordsMarathi.includes(word)) {
+            abusiveCount++;
+        }
+    });
+
+    if (abusiveCount > 0) {
+        return 'Abusive';
+    } else if (positiveCount > negativeCount) {
+        return 'Positive';
+    } else if (negativeCount > positiveCount) {
+        return 'Negative';
+    } else {
+        return 'Neutral';
+    }
+};
+
 
 const ChatFetcher = () => {
     const [chats, setChats] = useState([]);
     const [sentimentResults, setSentimentResults] = useState([]);
     const { currentUser } = useContext(AuthContext);
     const { data } = useContext(ChatContext);
-    const sentiment = new Sentiment();
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     useEffect(() => {
@@ -44,10 +94,10 @@ const ChatFetcher = () => {
 
     const analyzeSentiments = (messages) => {
         const results = messages.map((message) => {
-            const result = sentiment.analyze(message.text);
+            const sentiment = analyzeCustomSentiment(message.text);
             return {
                 ...message,
-                sentiment: result.score > 0 ? 'Positive' : result.score < 0 ? 'Negative' : 'Neutral',
+                sentiment,
             };
         });
         setSentimentResults(results);
@@ -60,7 +110,10 @@ const ChatFetcher = () => {
     return (
         <div className='chatsFetched'>
             <img className='backIcon' src={Back} alt="back" onClick={handleBack} />
-            <h2>Chat Messages</h2>
+            <div className="chartsContainer">
+                <SentimentChart sentimentResults={sentimentResults} />
+            </div>
+            <h2>Chats Sentiments</h2>
             {sentimentResults.length > 0 ? (
                 <>
                     <ul>
@@ -73,9 +126,7 @@ const ChatFetcher = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="chartsContainer">
-                        <SentimentChart sentimentResults={sentimentResults} />
-                    </div>
+
                 </>
             ) : (
                 <p>No messages found.</p>
