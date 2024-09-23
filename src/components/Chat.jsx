@@ -19,15 +19,18 @@ const Chat = () => {
   return (
     <div className='chat'>
       <div className="chatInfo">
-        <span>{data.user?.displayName}</span>
-        <div className="chatIcons">
+        <span>{data.user?.displayName || "No Active Chat"}</span>
+
+        {data.user?.displayName ? <div className="chatIcons">
           <img
-            src={cam}
-            alt="Camera Icon"
+            src={data.user?.displayName ? cam : null}
+            alt=""
             onClick={handleCamClick}
             style={{ cursor: 'pointer' }} // Add pointer cursor for better UX
           />
-        </div>
+
+        </div> : null}
+
       </div>
       {isChatFetcherVisible ? (
         // <ChatFetcher />
@@ -35,7 +38,8 @@ const Chat = () => {
       ) : (
         <>
           <Messages />
-          <Input />
+          {/* <Input /> */}
+          {data.user?.displayName && <Input />}
         </>
       )}
     </div>

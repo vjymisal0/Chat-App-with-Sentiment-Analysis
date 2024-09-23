@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
+
 import {
     arrayUnion,
     doc,
@@ -9,11 +10,12 @@ import {
     updateDoc,
     setDoc,
 } from "firebase/firestore";
+
 import { db, storage } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Img from '../img/img.png';
-
+import Attach from '../img/attach.png';
 
 const Input = () => {
     const [text, setText] = useState("");
@@ -95,7 +97,7 @@ const Input = () => {
                 value={text}
             />
             <div className="send">
-                {/* <img src={Attach} alt="" /> */}
+                <img src={Attach} alt="" />
                 <input
                     type="file"
                     style={{ display: "none" }}
