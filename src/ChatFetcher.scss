@@ -19,8 +19,6 @@
         margin-bottom: 20px;
     }
 
-
-
     ul {
         list-style: none;
         padding: 0;
@@ -55,6 +53,10 @@
             &.Neutral {
                 background-color: rgba(255, 206, 86, 0.1);
             }
+
+            &.Abusive {
+                background-color: rgba(255, 0, 0, 0.1);
+            }
         }
     }
 
@@ -67,38 +69,38 @@
         cursor: pointer;
         width: 30px;
         height: 30px;
-        // position: absolute;
+        position: absolute;
         top: 20px;
         left: 20px;
         transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
-    .backIcon:hover {
-        transform: scale(1.1);
+    .logo {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin-left: 100px; // Space between icons
     }
 
-    .chartContainer {
+    .chartsContainer {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 20px;
-        width: 50%;
+        width:50%;
         max-width: 1200px;
         background-color: #0f1e36;
         border-radius: 10px;
         border: solid 1px #d8dfe9;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 0 auto;
+        margin: 20px auto;
 
         @media (max-width: 768px) {
-            flex-direction: column;
-            width: 100%;
             padding: 10px;
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            flex-direction: column;
-            width: 100%;
         }
 
         h3 {
@@ -110,5 +112,12 @@
             max-width: 100%;
             height: auto;
         }
+    }
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
     }
 }
