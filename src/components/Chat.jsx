@@ -19,7 +19,7 @@ const Chat = () => {
   return (
     <div className='chat'>
       <div className="chatInfo">
-        <span>{data.user?.displayName || "No Active Chat"}</span>
+        <span>{data.user?.displayName || "Click on Users to Chat"}</span>
 
         {data.user?.displayName ? <div className="chatIcons">
           <img
