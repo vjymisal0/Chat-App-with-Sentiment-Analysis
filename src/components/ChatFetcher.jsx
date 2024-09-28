@@ -18,7 +18,9 @@ const positiveWords = [
     'beautiful', 'grateful', 'exciting', 'lovely', 'adorable', 'charming', 'creative', 'blessed', 'successful', 'lucky',
     'cheerful', 'incredible', 'supportive', 'positive', 'delightful', 'motivated', 'sweet', 'optimistic', 'winner',
     'calm', 'appreciated', 'fulfilled', 'admirable', 'helpful', 'thrilled', 'enthusiastic', 'smooth', 'confident',
-    'proud', 'vibrant', 'joyous', 'fun', 'thriving', 'glad', 'elated', 'graceful', 'hopeful', 'prosperous', 'सुख', 'आनंद',
+    'proud', 'vibrant', 'joyous', 'fun', 'thriving', 'glad', 'elated', 'graceful', 'hopeful', 'prosperous',
+    'attractive', 'right', 'happy', 'good', 'excited', 'satisfied', 'content', 'pleased', 'enjoy', 'enjoyable', 'enjoyment',
+    'सुख', 'आनंद',
     'मस्त', 'अच्छा', 'उत्साह', 'आदर', 'शांत', 'सकारात्मक', 'अति उत्तम', 'आशावादी', 'माझं', 'शुभ्र', 'चमत्कारिक',
     'भरभराट', 'उत्तेजित', 'प्रसन्न', 'उमेद', 'शानदार', 'धन्य', 'कौतुक', 'संपन्न', 'चैतन्य', 'आभारी', 'प्रिय', 'सुखकर',
     'विश्रांती', 'आरामदायी', 'नवीन', 'प्रसिद्ध', 'स्वतंत्र', 'उत्तम', 'उत्तमदायक', 'खुशी', 'सर्वोत्कृष्ट', 'गौरवशाली',
@@ -37,7 +39,8 @@ const abusiveWordsEnglish = [
     'jerkass', 'punk', 'weirdo', 'scum', 'sleezy', 'broke', 'creep', 'rude', 'shithead', 'git', 'weirdo', 'asswipe',
     'scummy', 'coward', 'dumbass', 'dog', 'buffoon', 'cocky', 'creep', 'sap', 'crybaby', 'imbecile', 'fucked', 'dipshit',
     'maggot', 'maniac', 'deranged', 'twisted', 'clown', 'annoying', 'hellish', 'ugly', 'bother', 'gross', 'nerd', 'assclown',
-    'wimp', 'bloated', 'hack', 'lazy', 'idiocy', 'coward', 'baboon', 'gibberish'
+    'wimp', 'bloated', 'hack', 'lazy', 'idiocy', 'coward', 'baboon', 'gibberish',
+    ''
 ];
 
 const abusiveWordsMarathi = [
@@ -58,6 +61,14 @@ const negativeWords = [
     'disheartened', 'discouraged', 'hopeless', 'despair', 'grief', 'suffering', 'anguish', 'heartbroken', 'broken', 'tears',
     'suffer', 'pain', 'ache', 'dismal', 'unfortunate', 'unlucky', 'unpleasant', 'unhappy', 'sadness', 'disappointment',
     'trouble', 'disturbance', 'fear', 'worry', 'anxiety', 'fright', 'panic', 'scare', 'frightening', 'suffering', 'trouble',
+    'unpleasant', 'uncomfortable', 'distress', 'discomfort', 'fearful', 'anxious', 'scary', 'worried', 'dreadful', 'dread',
+    'horror', 'scared', 'frightened', 'terrified', 'panic', 'painful', 'sorrowful', 'regretful', 'displeased', 'displeasure',
+    'discontent', 'discomfort', 'distress', 'dismay', 'discouraged', 'hopeless', 'despair', 'grief', 'suffering', 'anguish',
+    'heartbroken', 'broken', 'tears', 'suffer', 'pain', 'ache', 'dismal', 'unfortunate', 'unlucky', 'unpleasant', 'unhappy',
+    'sadness', 'disappointment', 'trouble', 'disturbance', 'fear', 'worry', 'anxiety', 'fright', 'panic', 'scare', 'frightening',
+    'suffering', 'trouble', 'unpleasant', 'uncomfortable', 'distress', 'discomfort', 'fearful', 'anxious', 'scary', 'worried',
+    'dreadful', 'dread', 'horror', 'scared', 'frightened', 'terrified', 'panic', 'दुखी', 'अखंड', 'खराब', 'भयानक', 'वाईट',
+    'भयानक', 'भयानक', 'भयानक', 'अवघड', 'दुर्दैवी', 'दुखी', 'उदास', 'दु:ख', 'उदासी', 'दु:ख', 'दु:ख', 'गालाट',
     'दुःख', 'निराश', 'अस्वस्थ', 'खोटा', 'विघ्न', 'कायम', 'भयानक', 'दुख', 'आशा नाही', 'संकट', 'त्रास', 'बिचारा',
     'वेदनादायक', 'फसवलेला', 'रुसलेला', 'हाहाकार', 'पराभूत', 'निराशाजनक', 'भ्रष्ट', 'धोकादायक', 'नासलेले', 'रडणे',
     'एकटा', 'दोषी', 'दुर्दैवी', 'बेकार', 'भयावह', 'सतावलेले', 'कसोटी', 'माणूसघाण', 'काळजी', 'घाबरलेला', 'ह्रास',
