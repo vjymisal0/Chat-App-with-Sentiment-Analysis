@@ -6,6 +6,7 @@
 .chatsFetched {
     background-color: #091629;
     /* Match background with main styling */
+    background-color: #091629;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -83,16 +84,21 @@
         cursor: pointer;
         width: 30px;
         height: 30px;
-        margin-left: 100px; // Space between icons
+        margin-left: 100px;
+        /* Space between icons */
     }
 
     .chartsContainer {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        width:50%;
-        max-width: 1200px;
+        gap: 10px;
+        /* Reduced gap for a tighter layout */
+        padding: 10px;
+        /* Reduced padding */
+        width: 35%;
+        /* Reduced width to make graphs smaller */
+        max-width: 800px;
+        /* Reduced maximum width */
         background-color: #0f1e36;
         border-radius: 10px;
         border: solid 1px #d8dfe9;
@@ -101,6 +107,8 @@
 
         @media (max-width: 768px) {
             padding: 10px;
+            width: 90%;
+            /* Full width for smaller screens */
         }
 
         h3 {
@@ -110,7 +118,9 @@
 
         canvas {
             max-width: 100%;
-            height: auto;
+            height: 200px;
+            /* Set a specific height for smaller graphs */
+            width: auto;
         }
     }
 
