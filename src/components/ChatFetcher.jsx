@@ -52,6 +52,12 @@ const abusiveWordsMarathi = [
     'चेष्टा', 'बेजबाबदार'
 ];
 const negativeWords = [
+    'sad', 'unhappy', 'bad', 'terrible', 'horrible', 'worst', 'awful', 'disgusting', 'disappointing', 'unfortunate',
+    'miserable', 'depressed', 'painful', 'sorrow', 'gloomy', 'tragic', 'regret', 'hurt', 'upset', 'angry', 'mad', 'furious',
+    'irritated', 'annoyed', 'frustrated', 'displeased', 'discontent', 'displeasure', 'discomfort', 'distress', 'dismay',
+    'disheartened', 'discouraged', 'hopeless', 'despair', 'grief', 'suffering', 'anguish', 'heartbroken', 'broken', 'tears',
+    'suffer', 'pain', 'ache', 'dismal', 'unfortunate', 'unlucky', 'unpleasant', 'unhappy', 'sadness', 'disappointment',
+    'trouble', 'disturbance', 'fear', 'worry', 'anxiety', 'fright', 'panic', 'scare', 'frightening', 'suffering', 'trouble',
     'दुःख', 'निराश', 'अस्वस्थ', 'खोटा', 'विघ्न', 'कायम', 'भयानक', 'दुख', 'आशा नाही', 'संकट', 'त्रास', 'बिचारा',
     'वेदनादायक', 'फसवलेला', 'रुसलेला', 'हाहाकार', 'पराभूत', 'निराशाजनक', 'भ्रष्ट', 'धोकादायक', 'नासलेले', 'रडणे',
     'एकटा', 'दोषी', 'दुर्दैवी', 'बेकार', 'भयावह', 'सतावलेले', 'कसोटी', 'माणूसघाण', 'काळजी', 'घाबरलेला', 'ह्रास',
