@@ -145,7 +145,8 @@
         width: 85%;
         height: 90%;
         display: flex;
-        overflow: hidden;
+        overflow: visible;
+     
 
         @include tablet {
             width: 90%;
@@ -264,7 +265,8 @@
                     span {
                         font-size: 18px;
                         font-weight: 500;
-                    }
+                                          }
+                    
 
                     p {
                         font-size: 14px;
