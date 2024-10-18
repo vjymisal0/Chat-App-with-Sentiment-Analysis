@@ -203,6 +203,7 @@ const ChatFetcher = () => {
             ) : (
                 <p>No messages found.</p>
             )}
+
         </div>
     );
 };
