@@ -72,7 +72,7 @@ The **Chat App with Sentiment Analysis** is a cutting-edge application that enha
 
 - **/src**: React components and main app logic.  
 - **/firebase**: Firebase configuration and integration.  
-- **/assets**: Contains images, styles, and other assets.  
+- **/.**: Contains images, styles, and other assets.  
 
 ---
 
@@ -80,10 +80,10 @@ The **Chat App with Sentiment Analysis** is a cutting-edge application that enha
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-<img src="/screenshots/register.jpg" alt="Register Page" width="300" style="margin: 10px;"/>
-<img src="/screenshots/login.jpg" alt="Login Page" width="300" style="margin: 10px;"/>
-<img src="/screenshots/chat.jpg" alt="Chat Page" width="300" style="margin: 10px;"/>
-<img src="/screenshots/sentimentanalysis.jpg" alt="Sentiment Anslysis" width="300" style="margin: 10px;"/>
+<img src="/screenshots/register.png" alt="Register Page" width="300" style="margin: 10px;"/>
+<img src="/screenshots/login.png" alt="Login Page" width="300" style="margin: 10px;"/>
+<img src="/screenshots/chat.png" alt="Chat Page" width="300" style="margin: 10px;"/>
+<img src="/screenshots/sentimentanalysis.png" alt="Sentiment Anslysis" width="300" style="margin: 10px;"/>
 
 </div>
 
